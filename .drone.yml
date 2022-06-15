@@ -1,10 +1,15 @@
 kind: pipeline
-type: docker
-name: test
 
 steps:
-- name: dist
+- name: test
   image: node
   commands:
   - npm install
-  - npm run dist
+  - npm test
+
+- name: notify
+  image: plugins/slack
+  settings:
+    channel: general
+  when:
+    status: [ success, failure ]
