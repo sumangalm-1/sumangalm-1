@@ -1,5 +1,8 @@
 kind: pipeline
 name: default
+platform:
+  os: linux
+  arch: ppc64le
 
 steps:
 - name: node-js-sample
