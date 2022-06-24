@@ -7,7 +7,6 @@ platform:
 steps:
 - name: node-js-sample
   image: node
-  commands:
-  - npm install
+
   
   
